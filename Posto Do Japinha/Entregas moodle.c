@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "function.h"
 
-
 int main()
 {
     // sempre lembrar do Return 0;
@@ -22,14 +21,7 @@ int main()
     // ScanF("%d,&numero")
     // entrega 1
 
-    printf(CYN "\n\n\n Autor: Joao Victor Rosada Yamaoka\n\n" RESET);
-
-    printf("-----------------------------------\n");
-    printf(GRN "   Bem-Vindo ao Posto Do Japinha\n" RESET);
-    printf("-----------------------------------\n\n\n");
-
-    printf("Esse programa representa um posto de gasolina virtual, em que tera uma fila de carros, abastecimento, quantidade de carros na fila, quantidade do abastecimento em litros, valor total arrecadado com as vendas, quantidade de carros atendidos e quantidade de combustivel restante no tanque");
-    printf("\n\n\n\n");
+    introducao();
 
     printf("Informe o valor do combustivel (R$): ");
 
@@ -39,13 +31,11 @@ int main()
         printf("\nInforme o valor do combustivel: ");
         fflush(stdin);
     }
-    system("cls");
 
     printf("\nInforme o tamanho maximo da fila de carros: ");
 
-
     // Fazer a validação de entrada de numeros nao inteiros
-    
+
     while (!scanf("%d", &filatotal) || (filatotal <= 0))
     {
         printf(RED "Valor invalido para a fila!" RESET);
@@ -71,13 +61,7 @@ int main()
 
     while (opcao != 5)
     {
-        printf(YEL " \n \n             <MENU>        \n " RESET);
-        printf("\n\n 1 - Adicionar um carro na fila \n\n");
-        printf(" 2 - Abastecimento \n\n");
-        printf(" 3 - Exibir carros na fila de espera \n\n");
-        printf(" 4 - Relatorios \n\n");
-        printf(" 5 - Encerrar \n\n");
-
+        menu1();
         scanf("%d", &opcao);
         system("cls");
 
@@ -85,7 +69,7 @@ int main()
         {
 
         case 1:
-            filacarros = addcarro(filacarros, filatotal,tanque);
+            filacarros = addcarro(filacarros, filatotal, tanque);
             break;
 
         case 2:
@@ -137,13 +121,7 @@ int main()
 
             while (menu != 6)
             {
-                printf(YEL "            <RELATORIO>     \n " RESET);
-                printf("\n 1 - Quantidade de litros vendida \n\n");
-                printf(" 2 - Valor total arrecadado com as vendas \n\n");
-                printf(" 3 - Quantidade de carros atendidos \n\n");
-                printf(" 4 - Quantidade de combustivel restante no tanque \n\n");
-                printf(" 5 - Gerar arquivo para impressao \n\n");
-                printf(" 6 - Voltar ao menu anterior \n\n");
+                menu2();
 
                 scanf("%d", &menu);
                 system("cls");
@@ -178,7 +156,7 @@ int main()
             break;
 
         case 5:
-         despedida();
+            despedida();
             break;
         default:
             erro();
