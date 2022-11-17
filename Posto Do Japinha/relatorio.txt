@@ -1,0 +1,20 @@
+
+160.00 litros vendidos
+
+800.00 reais arrecadados com as vendas
+
+3 carros atendidos
+-----------------------------[0m
+Modelo: 1
+Cor: 1
+Ano: 1
+-----------------------------[0m
+Modelo: 2
+Cor: 2
+Ano: 2
+-----------------------------[0m
+Modelo: 3
+Cor: 3
+Ano: 3
+
+40.00 litros restante no tanque
